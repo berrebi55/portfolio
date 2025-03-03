@@ -7051,6 +7051,8 @@ textarea.form-control-lg {
   box-shadow: none !important;
 }
 
+
+
 .position-static {
   position: static !important;
 }
@@ -11794,4 +11796,34 @@ h1.display-5 {
 .btn-primary:hover {
   background-color: #4c51bf;
   border-color: #4c51bf;
+}
+/* Effet de zoom et d'ombre pour les certifications */
+.certification-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition fluide pour le zoom et l'ombre */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.certification-card:hover {
+  transform: scale(1.1); /* Zoom de 10% sur le survol */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Ombre légère au survol */
+}
+
+.certification-link {
+  display: block;
+  text-decoration: none; /* Enlève le soulignement du lien */
+}
+
+.certification-card img {
+  max-width: 80%; /* Limite la taille de l'image à 80% de la taille du conteneur */
+  height: auto;
+  margin-bottom: 10px; /* Espacement entre l'image et le texte */
+}
+
+.certification-card p {
+  margin-top: 5px; /* Espacement entre l'image et le texte */
+  font-weight: bold;
+  color: #333; /* Texte sombre */
 }
