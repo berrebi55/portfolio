@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Projet Véliko - Déploiement & Infrastructure</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Main Theme CSS -->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="../css/custom.css" rel="stylesheet" />
+</head>
+<body class="d-flex flex-column h-100 bg-light">
+<main class="flex-shrink-0">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <div class="container px-5">
+            <a class="navbar-brand" href="../index.html"><span class="fw-bolder text-primary">Portfolio</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../resume.html">Parcours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projets</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Projet Véliko -->
+    <section class="py-5">
+        <div class="container px-5">
+            <div class="text-center mb-4">
+                <h1 class="display-6 fw-bolder">Projet Véliko : Déploiement & Infrastructure</h1>
+                <p>Déploiement et configuration d’une application Symfony sur une architecture distribuée.</p>
+            </div>
+            <div class="card shadow rounded-4 border-0 mb-4">
+                <div class="card-body p-4">
+                    <h2 class="h5 fw-bolder">Contexte et Objectifs</h2>
+                    <p>Le projet <strong>BTS-SIO-G12-2025-VELIKO-Web</strong> est une application Symfony exploitant TailwindCSS et Stimulus en front-end, ainsi que MariaDB et une Mock API en back-end. Le déploiement s'effectue sur une infrastructure composée de trois serveurs distincts.</p>
+
+                    <h3 class="h6 fw-bold">1. Serveur 1 : Application Web</h3>
+                    <ul>
+                        <li><strong>Fonction :</strong> Héberger l'application Symfony.</li>
+                        <li><strong>Technologies :</strong> Apache2, PHP, Composer, Symfony CLI.</li>
+                        <li><strong>Problèmes :</strong> Permissions incorrectes, configuration des variables d’environnement, dépendances manquantes.</li>
+                        <li><strong>Solutions :</strong> Configuration des permissions, gestion des variables d’environnement avec `.env.local`, installation des dépendances avec Composer.</li>
+                    </ul>
+
+                    <h3 class="h6 fw-bold">2. Serveur 2 : Services Associés</h3>
+                    <ul>
+                        <li><strong>Fonction :</strong> Héberger des services Docker tels que Mailhog (simulateur SMTP) et Mock API.</li>
+                        <li><strong>Problèmes :</strong> Ports réseau bloqués, variables d’environnement manquantes.</li>
+                        <li><strong>Solutions :</strong> Configuration des ports avec `docker-compose.yml`, gestion des variables avec un fichier `.env` dédié.</li>
+                    </ul>
+
+                    <h3 class="h6 fw-bold">3. Serveur 3 : Base de Données</h3>
+                    <ul>
+                        <li><strong>Fonction :</strong> Héberger MariaDB avec accès distant sécurisé.</li>
+                        <li><strong>Problèmes :</strong> Connexions distantes refusées, permissions utilisateur insuffisantes.</li>
+                        <li><strong>Solutions :</strong> Modification de `my.cnf` pour autoriser les connexions distantes, gestion des permissions avec `GRANT ALL PRIVILEGES`.</li>
+                    </ul>
+
+                    <h3 class="h6 fw-bold">4. Configuration HTTPS et Sécurisation</h3>
+                    <ul>
+                        <li>Génération et installation d’un certificat SSL via Let’s Encrypt.</li>
+                        <li>Configuration d’Apache avec redirection automatique HTTP → HTTPS.</li>
+                        <li>Mise en place d’un pare-feu avec UFW pour restreindre les accès.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bouton de Téléchargement du Compte Rendu -->
+            <div class="text-center mb-4">
+                <a href="../assets/VELIKO.pdf" class="btn btn-primary btn-lg">
+                    <i class="bi bi-file-earmark-text"></i> Télécharger le Compte Rendu
+                </a>
+            </div>
+
+            <div class="text-center">
+                <a class="btn btn-secondary btn-lg" href="../projects.html">Retour aux Projets</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Theme JS -->
+<script src="../js/scripts.js"></script>
+</body>
+</html>
